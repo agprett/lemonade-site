@@ -78,7 +78,7 @@ const bookUs = (event) => {
         end
       }
 
-      console.log(body)
+      axios.post(`${baseURL}/booking`, body)
     
     } else {
       alert("Please select a valid date." + "\n\n" + "Date's before today and same day booking is not accepted." + "\n\n" + "We do not operate on Sundays" + "\n\n" + "Please call if you would like to book us for today!")
