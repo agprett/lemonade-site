@@ -1,0 +1,119 @@
+header {
+  width: 100vw;
+  height: 13vh;
+  background-color: aqua;
+}
+
+.main-body {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url("../imgs/lemon_field.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.middle-sections {
+  height: 100%;
+  width: 31%;
+  background-color: rgb(255, 165, 0, 50%);
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(255, 192, 203, 50%);
+}
+
+.lemonade-display {
+  width: 85%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.lemonade-pic {
+  height: 250px;
+  border-radius: 45%;
+}
+
+.bottom-body {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bottom-sections {
+  width: 47%;
+  height: 100%;
+  background-color: rgb(255, 165, 0, 50%);
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.review-form {
+  height: 65%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#rating-buttons {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#review-form-note {
+  height: 100px;
+  width: 300px;
+}
+
+.review-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.review {
+  max-height: 150px;
+  width: 95%;
+  background-color: lightblue;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+}
+
+.review-title {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.review-info {
+  margin-bottom: 5px;
+}
+
+footer {
+  width: 100vw;
+  height: 10vh;
+  background-color: black;
+  color: white;
+}
