@@ -1,4 +1,6 @@
 //HTML js code
+const bookingSubmit = document.querySelector('.booking-submit')
+const bookingCancel = document.querySelector('.booking-cancel')
 const overallRating = document.getElementById('overall-rating')
 const reviewForm = document.querySelector(".review-form")
 const reviewSection = document.querySelector('.review-section')
@@ -32,6 +34,14 @@ const displayReviews = (responseData) => {
   })
 }
 
+bookingCancel.addEventListener('click', () => {
+  document.querySelector('#booking-form-name').value = ""
+  document.querySelector('#booking-form-address').value = ""
+  document.querySelector('#booking-form-date').value = ""
+  document.querySelector('#booking-arrival-time').value = ""
+  document.querySelector('#booking-end-time').value = ""
+})
+
 //Random js stuff
 const restructureDate = (date) => {
   let splitDate = date.split('-')
@@ -46,8 +56,41 @@ const restructureDate = (date) => {
 //Server Requests
 const baseURL = 'http://localhost:4567/api'
 
+const bookUs = (event) => {
+  event.preventDefault()
+
+  let name = document.querySelector('#booking-form-name').value
+  let address = document.querySelector('#booking-form-address').value
+  let date = document.querySelector('#booking-form-date').value
+  let arrival = document.querySelector('#booking-arrival-time').value
+  let end = document.querySelector('#booking-end-time').value
+  
+  date = restructureDate(date)
+  checkDate = new Date(date)
+
+  if(name && address && date && arrival && end){
+    if(checkDate > new Date() && checkDate.getDay() !== 0){
+      const body = {
+        name,
+        address,
+        date,
+        arrival,
+        end
+      }
+
+      console.log(body)
+    
+    } else {
+      alert("Please select a valid date." + "\n\n" + "Date's before today and same day booking is not accepted." + "\n\n" + "We do not operate on Sundays" + "\n\n" + "Please call if you would like to book us for today!")
+    }
+  } else {
+    alert("Please fill out entire form")
+  }
+}
+
 const addReview = (event) => {
   event.preventDefault()
+
   let name = document.querySelector("#review-form-name")
   let date = document.querySelector("#review-form-date")
   let rating = document.querySelector("input[name='review-form-rating']:checked")
@@ -72,12 +115,12 @@ const addReview = (event) => {
     date.value = ''
     rating.checked = false
     note.value = ''
+
+    alert('Thank you for your review!')
   } else {
     alert('Please fill out all fields')
   }
 }
-
-reviewForm.addEventListener('submit', addReview)
 
 const getReviews = () => {
   axios.get(`${baseURL}/reviews`)
@@ -88,5 +131,10 @@ const getReviews = () => {
     console.log(err)
   })
 }
+
+//functions
+bookingSubmit.addEventListener('click', bookUs)
+
+reviewForm.addEventListener('submit', addReview)
 
 getReviews()

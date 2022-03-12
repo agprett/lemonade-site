@@ -18,9 +18,9 @@
   <section class="main-body">
     <section class="middle-sections" id="highlight">highlight section</section>
     <section class="middle-sections" id="menu">
-      <h2>Enjoy our two delicious lemonades!</h2>
+      <h2>We have two delicious lemonades!</h2>
       <div class="lemonade-display" id="reg-lemonade">
-        <h3>Lemonade</h3>
+        <h3>Lemonade<br>$1.30</h3>
         <img
           src="../imgs/normal_lemonade.png"
           alt="lemonade"
@@ -33,10 +33,55 @@
           alt="fancy lemonade"
           class="lemonade-pic"
         />
-        <h3>Fancy Lemonade</h3>
+        <h3>Fancy Lemonade<br>$2.00</h3>
       </div>
     </section>
-    <section class="middle-sections" id="book-us">Book Us</section>
+    <section class="middle-sections" id="book-us">
+      <h3>Want to schedule us for your event?</h3>
+      <h3>Book here!</h3>
+      <form class="booking-form">
+        <input id="booking-form-name" placeholder="Name"/>
+        <input id="booking-form-address" placeholder="Address/location"/>
+        <input id="booking-form-date" type="date"/>
+        <div class="booking-selections">
+          <select id="booking-arrival-time">
+            <option value="">Select Arrival Time</option>
+            <option value="8:00 AM">8:00 AM</option>
+            <option value="9:00 AM">9:00 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
+          </select>
+          <select id="booking-end-time">
+            <option value="">Select End Time</option>
+            <option value="8:00 AM">8:00 AM</option>
+            <option value="9:00 AM">9:00 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
+          </select>
+        </div>
+        <div class="form-buttons">
+          <!-- <input type="submit" value="Book!"/> -->
+          <button class="booking-submit">Book!</button>
+          <button class="booking-cancel">Cancel</button>
+        </div>
+      </form>
+    </section>
   </section>
 
   <section class="bottom-body">
@@ -56,7 +101,10 @@
           <input type="radio" name="review-form-rating" value="5"> 5
         </div>
         <textarea id="review-form-note"></textarea>
-        <input type="submit" value="submit">  
+        <div class="form-buttons">
+          <input type="submit" value="Submit">
+          <button id="review-form-cancel">Clear</button>
+        </div>
       </form>
     </div>
     <div class="bottom-sections review-section"></div>

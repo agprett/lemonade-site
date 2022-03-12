@@ -5,8 +5,6 @@ const getOverallRating = (reviewsInfo) => {
 
   summedReviews = (summedReviews / reviewsInfo.length).toFixed(1)
 
-  console.log(summedReviews)
-
   return summedReviews
 }
 
