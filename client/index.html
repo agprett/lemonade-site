@@ -37,11 +37,12 @@
       </div>
     </section>
     <section class="middle-sections" id="book-us">
-      <h3>Want to schedule us for your event?</h3>
-      <h3>Book here!</h3>
+      <h2>Book us for your event here!</h2>
       <form class="booking-form">
-        <input id="booking-form-name" placeholder="Name"/>
-        <input id="booking-form-address" placeholder="Address/location"/>
+        <div>
+          <input id="booking-form-name" placeholder="Name"/>
+          <input id="booking-form-address" placeholder="Address/location"/>
+        </div>
         <input id="booking-form-date" type="date"/>
         <div class="booking-selections">
           <select id="booking-arrival-time">
@@ -81,6 +82,12 @@
           <button class="booking-cancel">Cancel</button>
         </div>
       </form>
+      <section id="booked-dates-display">
+        <input type='month'/>
+        <div class="calendar">
+        </div>
+        <div class="calendar-legend">Legend</div>
+      </section>
     </section>
   </section>
 
@@ -100,9 +107,10 @@
           <input type="radio" name="review-form-rating" value="4"> 4
           <input type="radio" name="review-form-rating" value="5"> 5
         </div>
-        <textarea id="review-form-note"></textarea>
+        <textarea id="review-form-note" placeholder="Review notes"></textarea>
         <div class="form-buttons">
-          <input type="submit" value="Submit">
+          <!-- <input type="submit" value="Submit"> -->
+          <button class="review-form-submit">Submit</button>
           <button id="review-form-cancel">Clear</button>
         </div>
       </form>

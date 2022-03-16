@@ -5,7 +5,7 @@ header {
 }
 
 .main-body {
-  height: 90vh;
+  height: 95vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ header {
 
 .middle-sections {
   height: 100%;
-  width: 31%;
+  width: 30%;
   background-color: rgb(255, 165, 0, 50%);
 }
 
@@ -40,6 +40,53 @@ header {
 .lemonade-pic {
   height: 250px;
   border-radius: 45%;
+}
+
+#book-us {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.booking-form {
+  width: 75%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#booked-dates-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* background-color: pink; */
+}
+
+.calendar {
+  margin: 5px 0px;
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  /* background-color: purple; */
+}
+
+.calendar-spacer {
+  width: 14.2%;
+  height: 75px;
+}
+
+.days {
+  width: 14.2%;
+  height: 75px;
+  border: 1px solid black;
+  /* background-color: blue; */
 }
 
 .bottom-body {

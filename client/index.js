@@ -1,8 +1,9 @@
 //HTML js code
 const bookingSubmit = document.querySelector('.booking-submit')
 const bookingCancel = document.querySelector('.booking-cancel')
+const calendarDisplay = document.querySelector(".calendar")
 const overallRating = document.getElementById('overall-rating')
-const reviewForm = document.querySelector(".review-form")
+const reviewFormSubmit = document.querySelector(".review-form-submit")
 const reviewSection = document.querySelector('.review-section')
 
 const createReviewTiles = (reviewInfo) => {
@@ -42,7 +43,38 @@ bookingCancel.addEventListener('click', () => {
   document.querySelector('#booking-end-time').value = ""
 })
 
+const createCalendar = (days, offset) => {
+  console.log(offset)
+  for(let i = 0; i < offset; i++){
+    const spacer = document.createElement('div')
+
+    spacer.classList.add("calendar-spacer")
+
+    calendarDisplay.appendChild(spacer)
+  }
+
+  for(let i = 1; i <= days; i++){
+    const day = document.createElement('div')
+
+    day.classList.add('days')
+
+    day.innerHTML = `
+      <p>${i}</p>
+      <span class="pending">Morning</span>
+      <span class="pending">Afternoon</span>
+      <span class="booked">Night</span>
+    `
+
+    calendarDisplay.appendChild(day)
+  }
+}
+
 //Random js stuff
+const date = new Date()
+const firstOfMonth = new Date(date.getFullYear(), date.getMonth(), 1)
+const lastOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0)
+// console.log(date, firstOfMonth, lastOfMonth)
+
 const restructureDate = (date) => {
   let splitDate = date.split('-')
 
@@ -135,6 +167,8 @@ const getReviews = () => {
 //functions
 bookingSubmit.addEventListener('click', bookUs)
 
-reviewForm.addEventListener('submit', addReview)
+reviewFormSubmit.addEventListener('click', addReview)
+
+createCalendar(lastOfMonth.getDate(), lastOfMonth.getDay())
 
 getReviews()
