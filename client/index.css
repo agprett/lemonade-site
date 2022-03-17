@@ -116,12 +116,10 @@ label {
 }
 
 .pending {
-  /* width: 100%; */
   background-color: yellow;
 }
 
 .booked {
-  /* width: 100%; */
   background-color: blue;
   color: white;
 }

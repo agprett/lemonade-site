@@ -49,11 +49,29 @@ module.exports = {
       return viewedDate.getMonth() === bookedDate.getMonth()
     })
 
+    let pendingDates = {}
+    let bookedDates = {}
+
     filteredArray.forEach(booking => {
-      delete booking.id
+      let tempDay = new Date(booking.date).getDate()
+
+      if(booking.status === 'pending'){
+        if(pendingDates[tempDay]) {
+          pendingDates[tempDay] = [...booking.times, ...pendingDates[tempDay]]
+        } else {
+          pendingDates[tempDay] = booking.times
+        }
+      } else {
+        if(bookedDates[tempDay]) {
+          bookedDates[tempDay] = [...booking.times, ...bookedDates[tempDay]]
+        } else {
+          bookedDates[tempDay] = booking.times
+        }
+        
+      }
     })
 
-    res.status(200).send({date, filteredArray})
+    res.status(200).send({date, bookedDates, pendingDates})
   },
 
   scheduleBooking: (req, res) => {

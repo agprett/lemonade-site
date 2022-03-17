@@ -45,7 +45,7 @@ bookingCancel.addEventListener('click', () => {
   document.querySelector('#booking-end-time').value = ""
 })
 
-const createCalendar = (days, offset) => {
+const createCalendar = (days, offset, pendingDates, bookedDates) => {
   while(calendarDisplay.firstChild){
     calendarDisplay.removeChild(calendarDisplay.firstChild)
   }
@@ -60,15 +60,49 @@ const createCalendar = (days, offset) => {
 
   for(let i = 1; i <= days; i++){
     const day = document.createElement('div')
-
     day.classList.add('days')
 
-    day.innerHTML = `
-      <p>${i}</p>
-      <span class="day-schedule pending">Morning</span>
-      <span class="day-schedule">Afternoon</span>
-      <span class="day-schedule booked">Night</span>
-    `
+    const morning = document.createElement('span')
+    morning.textContent = 'Morning'
+    morning.classList.add('day-schedule')
+    
+    const afternoon = document.createElement('span')
+    afternoon.textContent = 'Afternoon'
+    afternoon.classList.add('day-schedule')
+    
+    const night = document.createElement('span')
+    night.textContent = 'Night'
+    night.classList.add('day-schedule')
+
+    if(pendingDates[i]){
+      if(pendingDates[i].includes('Morning')){
+        morning.classList.add('pending')
+      }
+      if(pendingDates[i].includes('Afternoon')){
+        afternoon.classList.add('pending')
+      }
+      if(pendingDates[i].includes('Night')){
+        night.classList.add('pending')
+      }
+    }
+
+    if(bookedDates[i]){
+      if(bookedDates[i].includes('Morning')){
+        morning.classList.add('booked')
+      }
+      if(bookedDates[i].includes('Afternoon')){
+        afternoon.classList.add('booked')
+      }
+      if(bookedDates[i].includes('Night')){
+        night.classList.add('booked')
+      }
+    }
+
+    day.innerHTML = `<p>${i}</p>`
+
+    day.appendChild(morning)
+    day.appendChild(afternoon)
+    day.appendChild(night)
 
     calendarDisplay.appendChild(day)
   }
@@ -110,7 +144,10 @@ const bookUs = (event) => {
         end
       }
 
-      // axios.post(`${baseURL}/booking`, body)
+      axios.post(`${baseURL}/booking`, body)
+      .then(res => {
+        alert(res.data)
+      })
     
     } else {
       alert("Please select a valid date." + "\n\n" + "Date's before today and same day booking is not accepted." + "\n\n" + "We do not operate on Sundays" + "\n\n" + "Please call if you would like to book us for today!")
@@ -120,11 +157,13 @@ const bookUs = (event) => {
   }
 }
 
-const getBookings = () => {
+const getBookings = (passedDate) => {
   let calendarDate
 
   if(viewedMonth.value){
     calendarDate = viewedMonth.value
+  } else if(passedDate) {
+    calendarDate = passedDate
   } else {
     let tempDate = new Date()
 
@@ -139,14 +178,19 @@ const getBookings = () => {
   }
 
   axios.get(`${baseURL}/booking/${calendarDate}`)
-  .then(res => {
-    viewedMonth.value = res.data.date
-    const date = new Date(res.data.date)
-    const firstOfMonth = new Date(date.getFullYear(), date.getMonth(), 1)
-    const lastOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0)
+    .then(res => {
+      const {bookedDates, pendingDates} = res.data
 
-    createCalendar(lastOfMonth.getDate(), firstOfMonth.getDay())
-  })
+      viewedMonth.value = res.data.date
+
+      const firstOfMonth = new Date(restructureDate(`${res.data.date}-01`))
+      const lastOfMonth = new Date(firstOfMonth.getFullYear(), firstOfMonth.getMonth() + 1, 0)
+
+      createCalendar(lastOfMonth.getDate(), firstOfMonth.getDay(), bookedDates, pendingDates)
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
 
 const addReview = (event) => {
