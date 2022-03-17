@@ -3,24 +3,18 @@
     "id": 1,
     "name": "Alec",
     "address": "1234 Blvd",
-    "date": "03/16/2022",
-    "times": ["Morning", "Afternoon"],
-    "status": "requested"
+    "booked-time": 1
   },
   {
     "id": 2,
     "name": "Alec",
     "address": "1234 Blvd",
-    "date": "04/17/2022",
-    "times": ["Morning"],
-    "status": "requested"
+    "booked-time": 2
   },
   {
     "id": 3,
     "name": "Alec",
     "address": "1234 Blvd",
-    "date": "04/17/2022",
-    "times": ["Night"],
-    "status": "requested"
+    "booked-time": 3
   }
 ]

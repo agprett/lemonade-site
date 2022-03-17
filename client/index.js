@@ -5,6 +5,8 @@ const calendarDisplay = document.querySelector(".calendar")
 const overallRating = document.getElementById('overall-rating')
 const reviewFormSubmit = document.querySelector(".review-form-submit")
 const reviewSection = document.querySelector('.review-section')
+const viewCalendarBtn = document.querySelector('.change-calendar')
+const viewedMonth = document.querySelector('#calendar-month-selection')
 
 const createReviewTiles = (reviewInfo) => {
   const review = document.createElement('div')
@@ -28,7 +30,7 @@ const displayReviews = (responseData) => {
 
   const {reviews, summedReviews} = responseData
 
-  overallRating.textContent = `Our Overall Rating: ${summedReviews}/5`
+  overallRating.textContent = `Our Overall Rating: ${summedReviews} / 5`
 
   reviews.forEach(review => {
     createReviewTiles(review)
@@ -44,7 +46,10 @@ bookingCancel.addEventListener('click', () => {
 })
 
 const createCalendar = (days, offset) => {
-  console.log(offset)
+  while(calendarDisplay.firstChild){
+    calendarDisplay.removeChild(calendarDisplay.firstChild)
+  }
+
   for(let i = 0; i < offset; i++){
     const spacer = document.createElement('div')
 
@@ -60,9 +65,9 @@ const createCalendar = (days, offset) => {
 
     day.innerHTML = `
       <p>${i}</p>
-      <span class="pending">Morning</span>
-      <span class="pending">Afternoon</span>
-      <span class="booked">Night</span>
+      <span class="day-schedule pending">Morning</span>
+      <span class="day-schedule">Afternoon</span>
+      <span class="day-schedule booked">Night</span>
     `
 
     calendarDisplay.appendChild(day)
@@ -70,11 +75,6 @@ const createCalendar = (days, offset) => {
 }
 
 //Random js stuff
-const date = new Date()
-const firstOfMonth = new Date(date.getFullYear(), date.getMonth(), 1)
-const lastOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0)
-// console.log(date, firstOfMonth, lastOfMonth)
-
 const restructureDate = (date) => {
   let splitDate = date.split('-')
 
@@ -110,7 +110,7 @@ const bookUs = (event) => {
         end
       }
 
-      axios.post(`${baseURL}/booking`, body)
+      // axios.post(`${baseURL}/booking`, body)
     
     } else {
       alert("Please select a valid date." + "\n\n" + "Date's before today and same day booking is not accepted." + "\n\n" + "We do not operate on Sundays" + "\n\n" + "Please call if you would like to book us for today!")
@@ -118,6 +118,35 @@ const bookUs = (event) => {
   } else {
     alert("Please fill out entire form")
   }
+}
+
+const getBookings = () => {
+  let calendarDate
+
+  if(viewedMonth.value){
+    calendarDate = viewedMonth.value
+  } else {
+    let tempDate = new Date()
+
+    let year = tempDate.getFullYear()
+    let month = tempDate.getMonth() + 1
+
+    if(month < 10){
+      month = '0' + month
+    }
+    
+    calendarDate = `${year}-${month}`
+  }
+
+  axios.get(`${baseURL}/booking/${calendarDate}`)
+  .then(res => {
+    viewedMonth.value = res.data.date
+    const date = new Date(res.data.date)
+    const firstOfMonth = new Date(date.getFullYear(), date.getMonth(), 1)
+    const lastOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0)
+
+    createCalendar(lastOfMonth.getDate(), firstOfMonth.getDay())
+  })
 }
 
 const addReview = (event) => {
@@ -169,6 +198,7 @@ bookingSubmit.addEventListener('click', bookUs)
 
 reviewFormSubmit.addEventListener('click', addReview)
 
-createCalendar(lastOfMonth.getDate(), lastOfMonth.getDay())
+viewCalendarBtn.addEventListener('click', getBookings)
 
+getBookings()
 getReviews()

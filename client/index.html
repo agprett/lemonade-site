@@ -36,45 +36,27 @@
         <h3>Fancy Lemonade<br>$2.00</h3>
       </div>
     </section>
-    <section class="middle-sections" id="book-us">
-      <h2>Book us for your event here!</h2>
+    <section class="middle-sections">
+      Reviews and more info
+    </section>
+  </section>
+
+  <section class="bottom-body">
+    <div class="bottom-sections" id="book-us">
       <form class="booking-form">
+        <h2>Book us for your event here!</h2>
         <div>
           <input id="booking-form-name" placeholder="Name"/>
           <input id="booking-form-address" placeholder="Address/location"/>
+          <input id="booking-form-date" type="date"/>
         </div>
-        <input id="booking-form-date" type="date"/>
         <div class="booking-selections">
-          <select id="booking-arrival-time">
-            <option value="">Select Arrival Time</option>
-            <option value="8:00 AM">8:00 AM</option>
-            <option value="9:00 AM">9:00 AM</option>
-            <option value="10:00 AM">10:00 AM</option>
-            <option value="11:00 AM">11:00 AM</option>
-            <option value="12:00 PM">12:00 PM</option>
-            <option value="1:00 PM">1:00 PM</option>
-            <option value="2:00 PM">2:00 PM</option>
-            <option value="3:00 PM">3:00 PM</option>
-            <option value="4:00 PM">4:00 PM</option>
-            <option value="5:00 PM">5:00 PM</option>
-            <option value="6:00 PM">6:00 PM</option>
-            <option value="7:00 PM">7:00 PM</option>
-          </select>
-          <select id="booking-end-time">
-            <option value="">Select End Time</option>
-            <option value="8:00 AM">8:00 AM</option>
-            <option value="9:00 AM">9:00 AM</option>
-            <option value="10:00 AM">10:00 AM</option>
-            <option value="11:00 AM">11:00 AM</option>
-            <option value="12:00 PM">12:00 PM</option>
-            <option value="1:00 PM">1:00 PM</option>
-            <option value="2:00 PM">2:00 PM</option>
-            <option value="3:00 PM">3:00 PM</option>
-            <option value="4:00 PM">4:00 PM</option>
-            <option value="5:00 PM">5:00 PM</option>
-            <option value="6:00 PM">6:00 PM</option>
-            <option value="7:00 PM">7:00 PM</option>
-          </select>
+          <input type="checkbox" name="morning"/>
+          <label for="morning">Morning(8 AM - 11 AM)</label>
+          <input type="checkbox" name="afternoon"/>
+          <label for="afternoon">Afternoon(12 PM - 3 PM)</label>
+          <input type="checkbox" name="night"/>
+          <label for="night">Night(4 PM - 7 PM)</label>
         </div>
         <div class="form-buttons">
           <!-- <input type="submit" value="Book!"/> -->
@@ -83,31 +65,43 @@
         </div>
       </form>
       <section id="booked-dates-display">
-        <input type='month'/>
+        <div class="calendar-stuff">
+          <input type='month' id="calendar-month-selection"/>
+          <button class="change-calendar">View month</button>
+          <div class="calendar-legend">
+            <p>Open:</p>
+            <div class="legend-block"></div>
+            <p>Pending:</p>
+            <div class="legend-block pending"></div>
+            <p>Booked:</p>
+            <div class="legend-block booked"></div>
+          </div>
+        </div>
         <div class="calendar">
         </div>
-        <div class="calendar-legend">Legend</div>
       </section>
-    </section>
-  </section>
+    </div>
 
-  <section class="bottom-body">
-    <div class="bottom-sections left-side">
+    <div class="bottom-sections review-side">
       <h2 id="overall-rating"></h2>
+      <div class="review-section"></div>
       <form class="review-form">
-        <h3>Recently experienced us?</h3>
-        <h3>Rate us here!</h3>
-        <input id="review-form-name" placeholder="Name"/>
-        <input id="review-form-date" type="date"/>
-        <div id="rating-buttons">
-          <p>Rating:</p>
-          <input type="radio" name="review-form-rating" value="1"> 1
-          <input type="radio" name="review-form-rating" value="2"> 2
-          <input type="radio" name="review-form-rating" value="3"> 3 
-          <input type="radio" name="review-form-rating" value="4"> 4
-          <input type="radio" name="review-form-rating" value="5"> 5
+        <h3>Recently experienced us? Rate us here!</h3>
+        <div class="review-form-inputs">
+          <div class="review-inputs-small">
+            <input id="review-form-name" placeholder="Name"/>
+            <input id="review-form-date" type="date"/>
+            <div id="rating-buttons">
+              <p>Rating:</p>
+              <input type="radio" name="review-form-rating" value="1"> 1
+              <input type="radio" name="review-form-rating" value="2"> 2
+              <input type="radio" name="review-form-rating" value="3"> 3 
+              <input type="radio" name="review-form-rating" value="4"> 4
+              <input type="radio" name="review-form-rating" value="5"> 5
+            </div>
+          </div>
+          <textarea id="review-form-note" placeholder="Review notes" maxlength="200"></textarea>
         </div>
-        <textarea id="review-form-note" placeholder="Review notes"></textarea>
         <div class="form-buttons">
           <!-- <input type="submit" value="Submit"> -->
           <button class="review-form-submit">Submit</button>
@@ -115,7 +109,6 @@
         </div>
       </form>
     </div>
-    <div class="bottom-sections review-section"></div>
   </section>
 
   <footer>Links/contact</footer>
