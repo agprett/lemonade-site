@@ -37,13 +37,20 @@ const displayReviews = (responseData) => {
   })
 }
 
-bookingCancel.addEventListener('click', () => {
+const clearBookingForm = (event) => {
+  if(event){
+    event.preventDefault()
+  }
+
   document.querySelector('#booking-form-name').value = ""
   document.querySelector('#booking-form-address').value = ""
   document.querySelector('#booking-form-date').value = ""
-  document.querySelector('#booking-arrival-time').value = ""
-  document.querySelector('#booking-end-time').value = ""
-})
+  document.querySelectorAll('.booking-blocks-selection:checked').forEach(box => {
+    box.checked = false
+  })
+}
+
+bookingCancel.addEventListener('click', clearBookingForm)
 
 const createCalendar = (days, offset, pendingDates, bookedDates) => {
   while(calendarDisplay.firstChild){
@@ -128,25 +135,46 @@ const bookUs = (event) => {
   let name = document.querySelector('#booking-form-name').value
   let address = document.querySelector('#booking-form-address').value
   let date = document.querySelector('#booking-form-date').value
-  let arrival = document.querySelector('#booking-arrival-time').value
-  let end = document.querySelector('#booking-end-time').value
+  let timesCheckboxes = document.querySelectorAll('.booking-blocks-selection:checked')
+
+  let times = []
+
+  timesCheckboxes.forEach(checked => {
+    times.push(checked.name)
+  })
   
   date = restructureDate(date)
   checkDate = new Date(date)
 
-  if(name && address && date && arrival && end){
+  if(name && address && date && times.length > 0){
     if(checkDate > new Date() && checkDate.getDay() !== 0){
       const body = {
         name,
         address,
         date,
-        arrival,
-        end
+        times
       }
 
       axios.post(`${baseURL}/booking`, body)
       .then(res => {
         alert(res.data)
+
+        let year = checkDate.getFullYear()
+        let month = checkDate.getMonth() + 1
+    
+        if(month < 10){
+          month = '0' + month
+        }
+        
+        let newDate = `${year}-${month}`
+
+        viewedMonth.value = newDate
+
+        clearBookingForm()
+        getBookings()
+      })
+      .catch((err) => {
+        alert('Date and time are already booked!\nPlease select another time.')
       })
     
     } else {
@@ -157,13 +185,11 @@ const bookUs = (event) => {
   }
 }
 
-const getBookings = (passedDate) => {
+const getBookings = () => {
   let calendarDate
 
-  if(viewedMonth.value){
+  if (viewedMonth.value){
     calendarDate = viewedMonth.value
-  } else if(passedDate) {
-    calendarDate = passedDate
   } else {
     let tempDate = new Date()
 
@@ -186,7 +212,7 @@ const getBookings = (passedDate) => {
       const firstOfMonth = new Date(restructureDate(`${res.data.date}-01`))
       const lastOfMonth = new Date(firstOfMonth.getFullYear(), firstOfMonth.getMonth() + 1, 0)
 
-      createCalendar(lastOfMonth.getDate(), firstOfMonth.getDay(), bookedDates, pendingDates)
+      createCalendar(lastOfMonth.getDate(), firstOfMonth.getDay(), pendingDates, bookedDates)
     })
     .catch(err => {
       console.log(err)

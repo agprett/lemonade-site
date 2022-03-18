@@ -3,7 +3,8 @@ const bookings = require('./booking.json')
 const bookingInfo = require('./booking-info.json')
 
 let reviewId = 3
-let bookingId = 2
+let bookingId = 4
+let bookingInfoId = 4
 
 const getOverallRating = (reviewsInfo) => {
   let summedReviews = reviewsInfo.reduce((acc, curr) => acc + curr.rating, 0)
@@ -55,7 +56,7 @@ module.exports = {
     filteredArray.forEach(booking => {
       let tempDay = new Date(booking.date).getDate()
 
-      if(booking.status === 'pending'){
+      if(booking.status == 'pending'){
         if(pendingDates[tempDay]) {
           pendingDates[tempDay] = [...booking.times, ...pendingDates[tempDay]]
         } else {
@@ -75,20 +76,43 @@ module.exports = {
   },
 
   scheduleBooking: (req, res) => {
-    const {name, date, address, times} = req.body
+    const {name, address, date, times} = req.body
 
-    const newBooking = {
-      id: bookingId,
-      name,
-      date,
-      address,
-      times,
-      status: 'pending'
+    let goodToGo = true
+
+    bookingInfo.forEach(bookedInfo => {
+      if(bookedInfo.date === date){
+        times.forEach(time => {
+          if(bookedInfo.times.includes(time)){
+            goodToGo = false
+          }
+        })
+      }
+    })
+
+    if(goodToGo){
+      const newBooking = {
+        id: bookingId,
+        name,
+        address,
+        "booked-time": bookingInfoId
+      }
+  
+      const newBookingInfo = {
+        id: bookingInfoId,
+        times,
+        date,
+        status: 'pending'
+      }
+  
+      bookings.push(newBooking)
+      bookingInfo.push(newBookingInfo)
+  
+      res.status(200).send('Booked successfully!')
+      bookingId++
+      bookingInfoId++
+    } else {
+      res.sendStatus(400)
     }
-
-    bookings.push(newBooking)
-
-    res.sendStatus(200)
-    bookingId++
   }
 }
