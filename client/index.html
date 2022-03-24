@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../imgs/lemonade_icon.png"/>
   <link rel="stylesheet" href="./reset.css"/>
   <link rel="stylesheet" href="./index.css"/>
-  <title>Lemon stand</title>
+  <title>Lemony Shine</title>
 </head>
 <body>
 
   <header>
-    <h1>Lemon stand</h1>
-    <h2>An Experience in EVERY sip!</h2>
+    <img
+      src="../imgs/icon--no-words.png"
+      alt="small-icon"
+      class="header-icon"
+    />
+    <h1>Lemony Shine</h1>
+    <h3 class="header-alert">Notice: This is not a real business</h3>
   </header>
 
   <section class="main-body">
-    <section class="middle-sections" id="highlight">highlight section</section>
     <section class="middle-sections" id="menu">
       <h2>We have two delicious lemonades!</h2>
       <div class="lemonade-display" id="reg-lemonade">
@@ -29,15 +34,26 @@
       </div>
       <div class="lemonade-display" id="fancy-lemonade">
         <img
-          src="../imgs/fancy_lemonade.png"
-          alt="fancy lemonade"
-          class="lemonade-pic"
+        src="../imgs/fancy_lemonade.png"
+        alt="fancy lemonade"
+        class="lemonade-pic"
         />
-        <h3>Fancy Lemonade<br>$2.00</h3>
+        <h3>Fancy Lemonade<br>$2.10</h3>
       </div>
     </section>
-    <section class="middle-sections">
-      Reviews and more info
+    <section class="middle-sections main-middle" id="highlight">
+      <div>Description</div>
+      <img
+        src="../imgs/icon-words.png"
+        alt="icon"
+        class="lemonade-icon"
+      />
+      <div>Mission and goal</div>
+    </section>
+    <section class="middle-sections more-info">
+      <div>Events we attend</div>
+      <div>Rates</div>
+      <div>If you're interested, schedule a booking below!</div>
     </section>
   </section>
 
@@ -69,7 +85,7 @@
           <button class="change-calendar">View month</button>
           <div class="calendar-legend">
             <p>Open:</p>
-            <div class="legend-block"></div>
+            <div class="legend-block open"></div>
             <p>Pending:</p>
             <div class="legend-block pending"></div>
             <p>Booked:</p>

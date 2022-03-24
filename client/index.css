@@ -1,7 +1,21 @@
 header {
   width: 100vw;
   height: 13vh;
-  background-color: aqua;
+  background-color: #B8336A;
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  height: 60px;
+  width: 90px;
+  border-radius: 47%;
+  margin: 0px 25px;
+}
+
+.header-alert {
+  position: absolute;
+  right: 15px;
 }
 
 .main-body {
@@ -10,7 +24,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-image: url("../imgs/lemon_field.png");
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 5%), 
+  rgba(25, 45, 65) 95%), url("../imgs/main-background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +34,7 @@ header {
 .middle-sections {
   height: 100%;
   width: 30%;
-  background-color: rgb(255, 165, 0, 50%);
+  background-color: rgb(255, 236, 173, 35%);
 }
 
 #menu {
@@ -27,7 +42,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: rgb(255, 192, 203, 50%);
+  /* background-color: rgb(255, 192, 203, 50%); */
 }
 
 .lemonade-display {
@@ -42,18 +57,35 @@ header {
   border-radius: 45%;
 }
 
+.main-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.lemonade-icon {
+  height: 250px;
+  width: 90%;
+  background: #EBEBEB;
+  border-radius: 45%;
+}
+
 .bottom-body {
   width: 100vw;
   height: 115vh;
   display: flex;
   justify-content: space-evenly;
+  background-image: linear-gradient(rgba(25, 45, 65) 5%, #14EBFF);
+  padding: 10px 0px;
 }
 
 .bottom-sections {
   width: 47%;
   height: 100%;
+  border-radius: 25px;
   padding-top: 5px;
-  background-color: rgb(255, 165, 0, 50%);
+  background-color: rgb(255, 170, 191, 80%);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -115,6 +147,10 @@ label {
   border: 1px solid black;
 }
 
+.open {
+  background-color: #F2F2F2;
+}
+
 .pending {
   background-color: yellow;
 }
@@ -150,7 +186,7 @@ label {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  /* background-color: blue; */
+  background-color: #F2F2F2;
 }
 
 .review-section {
@@ -174,7 +210,7 @@ label {
 .review {
   max-height: 150px;
   width: 48%;
-  background-color: lightblue;
+  background-color: #F2F2F2;
   border-radius: 20px;
   padding: 15px;
   margin-bottom: 10px;
@@ -233,6 +269,6 @@ label {
 footer {
   width: 100vw;
   height: 10vh;
-  background-color: black;
+  background-color: #B8336A;
   color: white;
 }
