@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const cors = require('cors')
 require('dotenv').config()
 
@@ -10,6 +11,8 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
+
+app.use('/', express.static(path.join(__dirname, '../client')))
 
 app.get('/api/reviews', getReviews)
 app.post('/api/reviews', addReview)

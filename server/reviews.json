@@ -3,14 +3,14 @@
     "id": 1,
     "name": "Alec P.",
     "rating": 5,
-    "date": "03/10/2020",
+    "date": "03/10/2022",
     "note": "Amazing lemonade!"
   },
   {
     "id": 2,
     "name": "Sami P.",
     "rating": 4,
-    "date": "03/08/2020",
+    "date": "03/08/2022",
     "note": "The lemonade was a little too sweet but otherwise it was great!"
   }
 ]

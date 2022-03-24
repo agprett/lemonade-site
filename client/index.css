@@ -4,6 +4,7 @@ header {
   background-color: #B8336A;
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .header-icon {
@@ -35,6 +36,7 @@ header {
   height: 100%;
   width: 30%;
   background-color: rgb(255, 236, 173, 35%);
+  border-radius: 0px 0px 100px 100px;
 }
 
 #menu {
@@ -271,4 +273,12 @@ footer {
   height: 10vh;
   background-color: #B8336A;
   color: white;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  font-size: larger;
+}
+
+.footer-links {
+  margin-left: 25px;
 }

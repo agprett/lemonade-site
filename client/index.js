@@ -7,6 +7,7 @@ const reviewFormSubmit = document.querySelector(".review-form-submit")
 const reviewSection = document.querySelector('.review-section')
 const viewCalendarBtn = document.querySelector('.change-calendar')
 const viewedMonth = document.querySelector('#calendar-month-selection')
+const mediaLinks = document.querySelectorAll('.footer-links')
 
 const createReviewTiles = (reviewInfo) => {
   const review = document.createElement('div')
@@ -115,6 +116,17 @@ const createCalendar = (days, offset, pendingDates, bookedDates) => {
   }
 }
 
+const displayLegalAlert = (site) => {
+  alert(`This is not a real business, otherwise this would have taken you to ${site}`)
+}
+
+mediaLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault()
+    displayLegalAlert(link.textContent)
+  })
+})
+
 //Random js stuff
 const restructureDate = (date) => {
   let splitDate = date.split('-')
@@ -127,8 +139,6 @@ const restructureDate = (date) => {
 }
 
 //Server Requests
-const baseURL = 'http://localhost:4567/api'
-
 const bookUs = (event) => {
   event.preventDefault()
 
@@ -137,11 +147,13 @@ const bookUs = (event) => {
   let date = document.querySelector('#booking-form-date').value
   let timesCheckboxes = document.querySelectorAll('.booking-blocks-selection:checked')
 
-  let times = []
+  let times = ""
 
   timesCheckboxes.forEach(checked => {
-    times.push(checked.name)
+    times += ` ${checked.name}`
   })
+
+  times.trim()
   
   date = restructureDate(date)
   checkDate = new Date(date)
@@ -155,7 +167,7 @@ const bookUs = (event) => {
         times
       }
 
-      axios.post(`${baseURL}/booking`, body)
+      axios.post(`/api/booking`, body)
       .then(res => {
         alert(res.data)
 
@@ -203,7 +215,7 @@ const getBookings = () => {
     calendarDate = `${year}-${month}`
   }
 
-  axios.get(`${baseURL}/booking/${calendarDate}`)
+  axios.get(`/api/booking/${calendarDate}`)
     .then(res => {
       const {bookedDates, pendingDates} = res.data
 
@@ -236,7 +248,7 @@ const addReview = (event) => {
       note: note.value
     }
   
-    axios.post(`${baseURL}/reviews`, body)
+    axios.post(`/api/reviews`, body)
     .then(res => {
       displayReviews(res.data)
     })
@@ -254,7 +266,7 @@ const addReview = (event) => {
 }
 
 const getReviews = () => {
-  axios.get(`${baseURL}/reviews`)
+  axios.get(`/api/reviews`)
   .then(res => {
     displayReviews(res.data)
   })
