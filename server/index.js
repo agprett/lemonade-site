@@ -3,7 +3,7 @@ const path = require('path')
 const cors = require('cors')
 require('dotenv').config()
 
-const {SERVER_PORT} = process.env
+const SERVER_PORT = process.env.PORT || process.env.SERVER_PORT
 
 const {getReviews, addReview, getBookings, scheduleBooking} = require('./controller')
 
