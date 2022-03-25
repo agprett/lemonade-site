@@ -79,8 +79,6 @@ module.exports = {
           }
         }
       })
-
-      console.log(pendingDates, bookedDates)
   
       res.status(200).send({date, bookedDates, pendingDates})
     })
@@ -102,8 +100,6 @@ module.exports = {
         let bookedTimes = dbRes[0][0].booked
   
         let splitTimes = times.split(' ')
-
-        console.log(splitTimes)
 
         splitTimes.forEach(timeSplit => {
           if(bookedTimes.includes(timeSplit)){

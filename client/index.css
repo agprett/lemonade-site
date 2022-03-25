@@ -1,27 +1,33 @@
 header {
   width: 100vw;
   height: 13vh;
-  background-color: #B8336A;
+  position: absolute;
+  /* background-color: #B8336A; */
   display: flex;
   align-items: center;
+  justify-content: center;
   color: white;
+  /* padding: 0px 25px; */
 }
 
 .header-icon {
   height: 60px;
   width: 90px;
   border-radius: 47%;
-  margin: 0px 25px;
+  position: absolute;
+  left: 25px;
 }
 
 .header-alert {
   position: absolute;
   right: 15px;
+  color: white;
 }
 
 .main-body {
-  height: 90vh;
+  height: 95vh;
   width: 100vw;
+  padding-top: 13vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -36,7 +42,7 @@ header {
   height: 100%;
   width: 30%;
   background-color: rgb(255, 236, 173, 35%);
-  border-radius: 0px 0px 100px 100px;
+  border-radius: 40px;
 }
 
 #menu {
@@ -48,14 +54,15 @@ header {
 }
 
 .lemonade-display {
-  width: 85%;
+  width: 90%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .lemonade-pic {
-  height: 250px;
+  height: 225px;
+  width: 175px;
   border-radius: 45%;
 }
 
@@ -78,16 +85,16 @@ header {
   height: 115vh;
   display: flex;
   justify-content: space-evenly;
-  background-image: linear-gradient(rgba(25, 45, 65) 5%, #14EBFF);
-  padding: 10px 0px;
+  background-image: linear-gradient(to bottom, rgba(25, 45, 65) 5%, #148CFF 94%);
+  padding: 30px 0px 10px;
 }
 
 .bottom-sections {
   width: 47%;
-  height: 100%;
+  height: 97%;
   border-radius: 25px;
   padding-top: 5px;
-  background-color: rgb(255, 170, 191, 80%);
+  background-color: rgb(255, 170, 191, 90%);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -270,10 +277,12 @@ label {
 }
 
 footer {
+  /* position: absolute;
+  bottom: 0px; */
   width: 100vw;
   height: 10vh;
-  background-color: #B8336A;
-  color: white;
+  background-color: rgb(255, 170, 191);
+  /* color: white; */
   display: flex;
   align-items: center;
   padding: 0px 20px;
