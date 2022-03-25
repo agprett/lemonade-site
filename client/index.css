@@ -193,6 +193,7 @@ label {
 
 .review-section {
   height: 75%;
+  width: 95%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

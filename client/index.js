@@ -83,6 +83,7 @@ const createCalendar = (days, offset, pendingDates, bookedDates) => {
     night.classList.add('day-schedule')
 
     if(pendingDates[i]){
+      // console.log(pendingDates[i])
       if(pendingDates[i].includes('Morning')){
         morning.classList.add('pending')
       }
@@ -95,6 +96,7 @@ const createCalendar = (days, offset, pendingDates, bookedDates) => {
     }
 
     if(bookedDates[i]){
+      // console.log(bookedDates[i])
       if(bookedDates[i].includes('Morning')){
         morning.classList.add('booked')
       }
@@ -152,8 +154,6 @@ const bookUs = (event) => {
   timesCheckboxes.forEach(checked => {
     times += ` ${checked.name}`
   })
-
-  times.trim()
   
   date = restructureDate(date)
   checkDate = new Date(date)
@@ -218,6 +218,8 @@ const getBookings = () => {
   axios.get(`/api/booking/${calendarDate}`)
     .then(res => {
       const {bookedDates, pendingDates} = res.data
+
+      // console.log(pendingDates)
 
       viewedMonth.value = res.data.date
 

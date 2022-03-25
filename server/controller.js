@@ -1,11 +1,3 @@
-// const reviews = require('./reviews.json')
-const bookings = require('./booking.json')
-const bookingInfo = require('./booking-info.json')
-
-let reviewId = 3
-let bookingId = 4
-let bookingInfoId = 4
-
 const Sequelize = require('sequelize')
 const {CONNECTION_STRING} = process.env
 
@@ -66,7 +58,6 @@ module.exports = {
     
     sequelize.query(`SELECT times, date, status FROM bookings
     WHERE (SELECT (DATE '${viewedDate.toISOString()}', INTERVAL '1 month') OVERLAPS (date, INTERVAL '1 day'));
-    
     `)
     .then(dbRes => {
       let responseArray = dbRes[0]
@@ -76,39 +67,53 @@ module.exports = {
   
         if(booking.status == 'pending'){
           if(pendingDates[tempDay]) {
-            pendingDates[tempDay] = [...booking.times, ...pendingDates[tempDay]]
+            pendingDates[tempDay] += ` ${booking.times}`
           } else {
             pendingDates[tempDay] = booking.times
           }
         } else {
           if(bookedDates[tempDay]) {
-            bookedDates[tempDay] = [...booking.times, ...bookedDates[tempDay]]
+            bookedDates[tempDay] = ` ${booking.times}`
           } else {
             bookedDates[tempDay] = booking.times
           }
-          
         }
       })
+
+      console.log(pendingDates, bookedDates)
   
       res.status(200).send({date, bookedDates, pendingDates})
     })
     .catch(err => console.log(err))
   },
 
-  scheduleBooking: (req, res) => {
-    const {name, address, date, times} = req.body
+  scheduleBooking: async (req, res) => {
+    let {name, address, date, times} = req.body
+
+    times = times.trim()
 
     let goodToGo = true
 
-    bookingInfo.forEach(bookedInfo => {
-      if(bookedInfo.date === date){
-        times.forEach(time => {
-          if(bookedInfo.times.includes(time)){
+    await sequelize.query(`SELECT times AS booked FROM bookings
+      WHERE '${date}' = date;
+    `)
+    .then(dbRes => {
+      if(dbRes[0][0]) {
+        let bookedTimes = dbRes[0][0].booked
+  
+        let splitTimes = times.split(' ')
+
+        console.log(splitTimes)
+
+        splitTimes.forEach(timeSplit => {
+          if(bookedTimes.includes(timeSplit)){
             goodToGo = false
           }
         })
       }
     })
+    .catch(err => console.log(err))
+
 
     if(goodToGo){
       sequelize.query(`INSERT INTO bookings (name, address, times, date, status)
