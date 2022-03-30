@@ -1,141 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./imgs/lemonade_icon.png"/>
-  <link rel="stylesheet" href="./reset.css"/>
-  <link rel="stylesheet" href="./index.css"/>
-  <title>Lemony Shine</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imgs/lemonade_icon.png"/>
+    <link rel="stylesheet" href="./reset.css"/>
+    <link rel="stylesheet" href="./index.css"/>
+    <title>Lemony Shine</title>
+  </head>
+  <body>
 
-  <header>
-    <img
-      src="./imgs/icon--no-words.png"
-      alt="small-icon"
-      class="header-icon"
-    />
-    <h1>Lemony Shine</h1>
-    <h3 class="header-alert">Notice: This is not a real business</h3>
-  </header>
-
-  <section class="main-body">
-    <section class="middle-sections" id="menu">
-      <h2>We have two delicious lemonades!</h2>
-      <div class="lemonade-display" id="reg-lemonade">
-        <h3>Lemonade<br>$1.30</h3>
-        <img
-          src="./imgs/normal_lemonade.png"
-          alt="lemonade"
-          class="lemonade-pic"
-        />
-      </div>
-      <div class="lemonade-display" id="fancy-lemonade">
-        <img
-        src="./imgs/fancy_lemonade.png"
-        alt="fancy lemonade"
-        class="lemonade-pic"
-        />
-        <h3>Fancy Lemonade<br>$2.10</h3>
-      </div>
-    </section>
-    <section class="middle-sections main-middle" id="highlight">
-      <div>Description</div>
+    <header>
       <img
+        src="./imgs/icon--no-words.png"
+        alt="small-icon"
+        class="header-icon"
+      />
+      <h1>Lemony Shine</h1>
+      <h3 class="header-alert">Notice: This is not a real business</h3>
+    </header>
+
+    <section class="main-body">
+      <section class="middle-sections" id="menu">
+        <h2>We have two delicious lemonades!</h2>
+        <div class="lemonade-display" id="reg-lemonade">
+          <h3>Lemonade<br>$1.30</h3>
+          <img
+            src="./imgs/normal_lemonade.png"
+            alt="lemonade"
+            class="lemonade-pic"
+          />
+        </div>
+        <div class="lemonade-display" id="fancy-lemonade">
+          <img
+            src="./imgs/fancy_lemonade.png"
+            alt="fancy lemonade"
+            class="lemonade-pic"
+          />
+          <h3>Fancy Lemonade<br>$2.10</h3>
+        </div>
+      </section>
+      <section class="middle-sections main-middle" id="highlight">
+        <img
         src="./imgs/icon-words.png"
         alt="icon"
         class="lemonade-icon"
-      />
-      <div>Mission and goal</div>
-    </section>
-    <section class="middle-sections more-info">
-      <div>Events we attend</div>
-      <div>Rates</div>
-      <div>If you're interested, schedule a booking below!</div>
-    </section>
-  </section>
-
-  <section class="bottom-body">
-    <div class="bottom-sections" id="book-us">
-      <form class="booking-form">
-        <h2>Book us for your event here!</h2>
-        <div>
-          <input id="booking-form-name" placeholder="Name"/>
-          <input id="booking-form-address" placeholder="Address/location"/>
-          <input id="booking-form-date" type="date"/>
-        </div>
-        <div class="booking-selections">
-          <input type="checkbox" class="booking-blocks-selection" name="Morning"/>
-          <label for="Morning">Morning(8 AM - 11 AM)</label>
-          <input type="checkbox" class="booking-blocks-selection" name="Afternoon"/>
-          <label for="Afternoon">Afternoon(12 PM - 3 PM)</label>
-          <input type="checkbox" class="booking-blocks-selection" name="Night"/>
-          <label for="Night">Night(4 PM - 7 PM)</label>
-        </div>
-        <div class="form-buttons">
-          <button class="booking-submit">Book!</button>
-          <button class="booking-cancel">Clear</button>
-        </div>
-      </form>
-      <section id="booked-dates-display">
-        <div class="calendar-stuff">
-          <input type='month' id="calendar-month-selection"/>
-          <button class="change-calendar">View month</button>
-          <div class="calendar-legend">
-            <p>Open:</p>
-            <div class="legend-block open"></div>
-            <p>Pending:</p>
-            <div class="legend-block pending"></div>
-            <p>Booked:</p>
-            <div class="legend-block booked"></div>
-          </div>
-        </div>
-        <div class="calendar">
+        />
+        <div class="main-middle-text">
+          <h3>OUR MISSION:<br>Help good memories become great!</h3>
+          <h3>Our fresh lemonade will take any event to the next level</h3>
         </div>
       </section>
-    </div>
+      <section class="middle-sections more-info">
+        <div>
+          <h4>We attend many local events including Farmers Markets, Sports Games, Fairs, and many more!</h4>
+          <h3>We serve Utah and Salt Lake counties in Utah!</h3>
+          <img src="./imgs/Salt_Lake_County.png" alt="Salt Lake County" class="county-pics"/>
+          <img src="./imgs/Utah_County.png" alt="Utah County" class="county-pics"/>
+          <h4>If you're interested in booking us for your event,<br>Schedule us below!</h4>
+        </div>
+        <div>
+          <h3>Rates:</h3>
+          <p>$50 scheduling fee for booking</p>
+          <p>$50 per time block</p>
+          <p>Our time blocks are:</p>
+          <p>Morning: 8:00 AM - 11:00 AM</p>
+          <p>Afternoon: 12:00 PM - 3:00 PM</p>
+          <p>Night 4:00 PM - 7:00 PM</p>
+          <p>When booking multiple blocks:
+            <ul>
+              <li>Only one scheduling fee is charged</li>
+              <li>The hour between adjacent choosen blocks is included free!</li>
+            </ul>
+          </p>
+        </div>
+      </section>
+    </section>
 
-    <div class="bottom-sections review-side">
-      <h2 id="overall-rating"></h2>
-      <div class="review-section"></div>
-      <form class="review-form">
-        <h3>Recently experienced us? Rate us here!</h3>
-        <div class="review-form-inputs">
-          <div class="review-inputs-small">
-            <input id="review-form-name" placeholder="Name"/>
-            <input id="review-form-date" type="date"/>
-            <div id="rating-buttons">
-              <p>Rating:</p>
-              <input type="radio" name="review-form-rating" value="1"> 1
-              <input type="radio" name="review-form-rating" value="2"> 2
-              <input type="radio" name="review-form-rating" value="3"> 3 
-              <input type="radio" name="review-form-rating" value="4"> 4
-              <input type="radio" name="review-form-rating" value="5"> 5
+    <section class="bottom-body">
+      <div class="bottom-sections" id="book-us">
+        <form class="booking-form">
+          <h2>Book us for your event here!</h2>
+          <div>
+            <input id="booking-form-name" placeholder="Name"/>
+            <input id="booking-form-address" placeholder="Address/location"/>
+            <input id="booking-form-date" type="date"/>
+          </div>
+          <div class="booking-selections">
+            <input type="checkbox" class="booking-blocks-selection" name="Morning"/>
+            <label for="Morning">Morning(8 AM - 11 AM)</label>
+            <input type="checkbox" class="booking-blocks-selection" name="Afternoon"/>
+            <label for="Afternoon">Afternoon(12 PM - 3 PM)</label>
+            <input type="checkbox" class="booking-blocks-selection" name="Night"/>
+            <label for="Night">Night(4 PM - 7 PM)</label>
+          </div>
+          <div class="form-buttons">
+            <button class="booking-submit">Book!</button>
+            <button class="booking-cancel">Clear</button>
+          </div>
+        </form>
+        <section id="booked-dates-display">
+          <div class="calendar-stuff">
+            <input type='month' id="calendar-month-selection"/>
+            <button class="change-calendar">View month</button>
+            <div class="calendar-legend">
+              <p>Open:</p>
+              <div class="legend-block open"></div>
+              <p>Pending:</p>
+              <div class="legend-block pending"></div>
+              <p>Booked:</p>
+              <div class="legend-block booked"></div>
             </div>
           </div>
-          <textarea id="review-form-note" placeholder="Review notes" maxlength="200"></textarea>
-        </div>
-        <div class="form-buttons">
-          <!-- <input type="submit" value="Submit"> -->
-          <button class="review-form-submit">Submit</button>
-          <button id="review-form-cancel">Clear</button>
-        </div>
-      </form>
-    </div>
-  </section>
+          <div class="calendar">
+          </div>
+        </section>
+      </div>
 
-  <footer>
-    <p>Links:</p>
-    <a href="" class="footer-links">Twitter</a>
-    <a href="" class="footer-links">Facebook</a>
-    <a href="" class="footer-links">Google</a>
-    <a href="" class="footer-links">Yelp</a>
-    <h3 class="header-alert">Notice: This is not a real business</h3>
-  </footer>
+      <div class="bottom-sections review-side">
+        <h2 id="overall-rating"></h2>
+        <div class="review-section"></div>
+        <form class="review-form">
+          <h3>Recently experienced us? Rate us here!</h3>
+          <div class="review-form-inputs">
+            <div class="review-inputs-small">
+              <input id="review-form-name" placeholder="Name"/>
+              <input id="review-form-date" type="date"/>
+              <div id="rating-buttons">
+                <p>Rating:</p>
+                <input type="radio" name="review-form-rating" value="1"> 1
+                <input type="radio" name="review-form-rating" value="2"> 2
+                <input type="radio" name="review-form-rating" value="3"> 3 
+                <input type="radio" name="review-form-rating" value="4"> 4
+                <input type="radio" name="review-form-rating" value="5"> 5
+              </div>
+            </div>
+            <textarea id="review-form-note" placeholder="Review notes" maxlength="200"></textarea>
+          </div>
+          <div class="form-buttons">
+            <!-- <input type="submit" value="Submit"> -->
+            <button class="review-form-submit">Submit</button>
+            <button id="review-form-cancel">Clear</button>
+          </div>
+        </form>
+      </div>
+    </section>
 
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="./index.js"></script>
-</body>
+    <footer>
+      <p>Links:</p>
+      <a href="" class="footer-links">Twitter</a>
+      <a href="" class="footer-links">Facebook</a>
+      <a href="" class="footer-links">Instagram</a>
+      <a href="" class="footer-links">Yelp</a>
+      <h3 class="header-alert">Notice: This is not a real business</h3>
+    </footer>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
 </html>

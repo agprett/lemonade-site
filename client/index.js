@@ -85,7 +85,6 @@ const createCalendar = (days, offset, pendingDates, bookedDates) => {
     night.classList.add('day-schedule')
 
     if(pendingDates[i]){
-      // console.log(pendingDates[i])
       if(pendingDates[i].includes('Morning')){
         morning.classList.add('pending')
       }
@@ -98,7 +97,6 @@ const createCalendar = (days, offset, pendingDates, bookedDates) => {
     }
 
     if(bookedDates[i]){
-      // console.log(bookedDates[i])
       if(bookedDates[i].includes('Morning')){
         morning.classList.add('booked')
       }
@@ -121,7 +119,7 @@ const createCalendar = (days, offset, pendingDates, bookedDates) => {
 }
 
 const displayLegalAlert = (site) => {
-  alert(`This is not a real business, otherwise this would have taken you to ${site}`)
+  alert(`This is not a real business.\nOtherwise, this would have taken you to our ${site}`)
 }
 
 mediaLinks.forEach(link => {
