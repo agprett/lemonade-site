@@ -63,7 +63,7 @@ module.exports = {
       let responseArray = dbRes[0]
   
       responseArray.forEach(booking => {
-        let tempDay = (new Date(booking.date).getDate()) + 1
+        let tempDay = booking.date.split('-')[2]
   
         if(booking.status == 'pending'){
           if(pendingDates[tempDay]) {

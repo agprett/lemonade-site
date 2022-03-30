@@ -84,7 +84,9 @@ const createCalendar = (days, offset, pendingDates, bookedDates) => {
     night.textContent = 'Night'
     night.classList.add('day-schedule')
 
+    
     if(pendingDates[i]){
+      console.log(i)
       if(pendingDates[i].includes('Morning')){
         morning.classList.add('pending')
       }
