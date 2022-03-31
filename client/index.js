@@ -16,12 +16,12 @@ const createReviewTiles = (reviewInfo) => {
   const redoneDate = restructureDate(reviewInfo.date)
 
   review.innerHTML = `
-    <div class="review-title">
+    <div class="review-info">
       <h3>${reviewInfo.name}</h3>
-      <div>Rating: ${reviewInfo.rating}/5</div>
+      <p>Date: ${redoneDate}</p>
     </div>
-    <p class="review-info">Date experienced: ${redoneDate}</p>
-    <p class="review-info">${reviewInfo.note}</p>
+    <h4>Rating: ${reviewInfo.rating}/5</h4>
+    <p class="review-note">${reviewInfo.note}</p>
     </div>
   `
 

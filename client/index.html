@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./imgs/lemonade_icon.png"/>
     <link rel="stylesheet" href="./reset.css"/>
-    <link rel="stylesheet" href="./index.css"/>
+    <link rel="stylesheet" href="./main.css"/>
+    <link rel="stylesheet" href="./forms.css"/>
+    <link rel="icon" href="./imgs/lemonade_icon.png"/>
     <title>Lemony Shine</title>
   </head>
   <body>
@@ -17,7 +18,7 @@
         alt="small-icon"
         class="header-icon"
       />
-      <h1>Lemony Shine</h1>
+      <h1>Lemony Shine Lemonade Truck</h1>
       <h3 class="header-alert">Notice: This is not a real business</h3>
     </header>
 
@@ -42,69 +43,72 @@
         </div>
       </section>
       <section class="middle-sections main-middle" id="highlight">
-        <h2 class="main-middle-text">OUR MISSION:<br>Help good memories become great!</h2>
+        <h2 class="main-middle-text">OUR MISSION:<br>Making good memories great!</h2>
         <img
           src="./imgs/icon-words.png"
           alt="icon"
           class="lemonade-icon"
         />
-        <section class="main-middle-text">
-          <h2>Our fresh lemonade will take any event to the next level</h2>
-          <br>
-          <h3>If you're interested in booking us for your event, schedule us below!</h3>
-        </section>
+        <h2 class="main-middle-text">Our fresh lemonade will take any event to the next level</h2>
       </section>
       <section class="middle-sections more-info">
-        <div class="more-info-section">
-          <h3>We serve Utah and Salt Lake counties</h3>
+        <div class="more-info-breakdown">
+          <h2>We serve Utah and Salt Lake counties in Utah</h2>
           <div class="county-pic-div">
             <img src="./imgs/Salt_Lake_County.png" alt="Salt Lake County" class="county-pics"/>
             <img src="./imgs/Utah_County.png" alt="Utah County" class="county-pics"/>
           </div>
-          <h3>We attend many local events including Farmers Markets, Sports Games, Fairs, and many more!</h3>
         </div>
-        <div class="more-info-rate-section">
-          <h3>Rates:</h3>
-          <h3>$35 scheduling fee, $50 per time block</h3>
-          <h3>Our time blocks are:</h3>
-          <div class="info-section-blocks">
-            <p class="info-blocks">Morning:<br>8 AM - 11 AM</p>
-            <p class="info-blocks">Afternoon:<br>12 PM - 3 PM</p>
-            <p class="info-blocks">Night:<br>4 PM - 7 PM</p>
-          </div>
-          <div id="more-info-side-note">
-            <h4>When booking multiple blocks:</h4>
-            <ul>
-              <li>Only one scheduling fee is charged</li>
-              <li>The hour between adjacent choosen blocks is included free!</li>
-            </ul>
-          </div>
-        </div>
+        <h2>We attend many local events including Farmers Markets, Sports Games, Fairs, and many more!</h2>
+        <h2>If you're interested in booking us for your event, schedule us below!</h2>
       </section>
     </section>
 
     <section class="bottom-body">
       <div class="bottom-sections" id="book-us">
-        <form class="booking-form">
-          <h2>Book us for your event here!</h2>
-          <div>
-            <input id="booking-form-name" placeholder="Name"/>
-            <input id="booking-form-address" placeholder="Address/location"/>
-            <input id="booking-form-date" type="date"/>
+        <div class="book-us-left">
+          <div class="more-info-rate-section">
+            <h2>Book us here!</h2>
+            <br>
+            <h3>Rates:</h3>
+            <h3>$35 scheduling fee, $50 per time block</h3>
+            <br>
+            <h3>Our time blocks are:</h3>
+            <div class="info-section-blocks">
+              <p class="info-blocks">Morning:<br>8 AM - 11 AM</p>
+              <p class="info-blocks">Afternoon:<br>12 PM - 3 PM</p>
+              <p class="info-blocks">Night:<br>4 PM - 7 PM</p>
+            </div>
+            <div id="more-info-side-note">
+              <h3>When booking multiple blocks:</h3>
+              <br>
+              <ul>
+                <li>Only one scheduling fee is charged</li>
+                <li>The hour between adjacent choosen blocks is included free!</li>
+              </ul>
+            </div>
           </div>
-          <div class="booking-selections">
-            <input type="checkbox" class="booking-blocks-selection" name="Morning"/>
-            <label for="Morning">Morning(8 AM - 11 AM)</label>
-            <input type="checkbox" class="booking-blocks-selection" name="Afternoon"/>
-            <label for="Afternoon">Afternoon(12 PM - 3 PM)</label>
-            <input type="checkbox" class="booking-blocks-selection" name="Night"/>
-            <label for="Night">Night(4 PM - 7 PM)</label>
-          </div>
-          <div class="form-buttons">
-            <button class="booking-submit">Book!</button>
-            <button class="booking-cancel">Clear</button>
-          </div>
-        </form>
+          <form class="booking-form">
+            <h2>Fill out this form to request booking:</h2>
+            <div>
+              <input id="booking-form-name" placeholder="Name"/>
+              <input id="booking-form-address" placeholder="Address/location"/>
+              <input id="booking-form-date" type="date"/>
+            </div>
+            <div class="booking-selections">
+              <input type="checkbox" class="booking-blocks-selection" name="Morning"/>
+              <label for="Morning">Morning</label>
+              <input type="checkbox" class="booking-blocks-selection" name="Afternoon"/>
+              <label for="Afternoon">Afternoon</label>
+              <input type="checkbox" class="booking-blocks-selection" name="Night"/>
+              <label for="Night">Night</label>
+            </div>
+            <div class="form-buttons">
+              <button class="booking-submit">Book!</button>
+              <button class="booking-cancel">Clear</button>
+            </div>
+          </form>
+        </div>
         <section id="booked-dates-display">
           <div class="calendar-stuff">
             <input type='month' id="calendar-month-selection"/>
@@ -124,25 +128,23 @@
       </div>
 
       <div class="bottom-sections review-side">
-        <h2 id="overall-rating"></h2>
-        <div class="review-section"></div>
+        <section class="display-reviews">
+          <h2 id="overall-rating"></h2>
+          <div class="review-section"></div>
+        </section>
         <form class="review-form">
           <h3>Recently experienced us? Rate us here!</h3>
-          <div class="review-form-inputs">
-            <div class="review-inputs-small">
-              <input id="review-form-name" placeholder="Name"/>
-              <input id="review-form-date" type="date"/>
-              <div id="rating-buttons">
-                <p>Rating:</p>
-                <input type="radio" name="review-form-rating" value="1"> 1
-                <input type="radio" name="review-form-rating" value="2"> 2
-                <input type="radio" name="review-form-rating" value="3"> 3 
-                <input type="radio" name="review-form-rating" value="4"> 4
-                <input type="radio" name="review-form-rating" value="5"> 5
-              </div>
-            </div>
-            <textarea id="review-form-note" placeholder="Review notes" maxlength="200"></textarea>
+          <input id="review-form-name" placeholder="Name"/>
+          <input id="review-form-date" type="date"/>
+          <div id="rating-buttons">
+            <p>Rating:</p>
+            <input type="radio" name="review-form-rating" value="1"> 1
+            <input type="radio" name="review-form-rating" value="2"> 2
+            <input type="radio" name="review-form-rating" value="3"> 3 
+            <input type="radio" name="review-form-rating" value="4"> 4
+            <input type="radio" name="review-form-rating" value="5"> 5
           </div>
+          <textarea id="review-form-note" placeholder="Review notes" maxlength="200"></textarea>
           <div class="form-buttons">
             <!-- <input type="submit" value="Submit"> -->
             <button class="review-form-submit">Submit</button>

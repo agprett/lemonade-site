@@ -1,0 +1,248 @@
+.bottom-body {
+  width: 100vw;
+  height: 190vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: linear-gradient(to bottom, rgba(25, 45, 65) 5%, #148CFF 94%);
+}
+
+.bottom-sections {
+  width: 95%;
+  height: 90vh;
+  border-radius: 25px;
+  background-color: rgb(255, 170, 190, 85%);
+}
+
+#book-us {
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.book-us-left {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.more-info-rate-section {
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.info-section-blocks {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5px 0px 15px;
+}
+
+.info-blocks {
+  padding: 10px;
+  border-radius: 20px;
+  /* background-color: rgb(255, 170, 190); */
+  font-size: large;
+  text-align: center;
+}
+
+#more-info-side-note {
+  width: 80%;
+}
+
+#more-info-side-note > ul {
+  text-align: left;
+}
+
+.booking-form {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+label {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+#booked-dates-display {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* background-color: pink; */
+}
+
+.calendar-stuff {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.calendar-legend {
+  /* width: 60%; */
+  display: flex;
+  padding: 0px 30px;
+  /* justify-content: space-evenly; */
+}
+
+.change-calendar {
+  width: 100px;
+}
+
+.legend-block {
+  height: 14px;
+  width: 14px;
+  margin: 0px 10px 0px 5px;
+  border: 1px solid black;
+}
+
+.open {
+  background-color: #F2F2F2;
+}
+
+.pending {
+  background-color: yellow;
+}
+
+.booked {
+  background-color: blue;
+  color: white;
+}
+
+.day-schedule {
+  width: 100%;
+}
+
+.calendar {
+  margin: 15px 0px 0px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar-spacer {
+  width: 14.2%;
+  height: 75px;
+}
+
+.days {
+  width: 14.2%;
+  height: 90px;
+  padding-bottom: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #F2F2F2;
+}
+
+.review-side {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.display-reviews {
+  width: 75%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#overall-rating {
+  margin: 10px 0px;
+  padding: 15px 0px;
+  height: 50px;
+}
+
+.review-section {
+  height: 90%;
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  padding: 10px 15px;
+  overflow-y: auto;
+}
+
+.review {
+  max-height: 150px;
+  width: 48%;
+  background-color: #F2F2F2;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  overflow-y: auto;
+}
+
+.review-title {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.review-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+.review-note {
+  margin-top: 10px;
+}
+
+.review-form {
+  height: 50%;
+  width: 35%;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#rating-buttons {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#review-form-note {
+  height: 35%;
+  width: 300px;
+}
+
+footer {
+  width: 100vw;
+  height: 10vh;
+  background-color: rgb(255, 170, 190, 85%);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  font-size: larger;
+}
+
+.footer-links {
+  margin-left: 25px;
+}
