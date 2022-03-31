@@ -1,13 +1,15 @@
+body {
+  background: linear-gradient(white, #148CFF);
+}
+
 header {
   width: 100vw;
   height: 13vh;
   position: absolute;
-  /* background-color: #B8336A; */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  /* padding: 0px 25px; */
 }
 
 .header-icon {
@@ -40,7 +42,7 @@ header {
 
 .middle-sections {
   height: 100%;
-  width: 30%;
+  width: 31%;
   background-color: rgb(255, 236, 173, 35%);
   border-radius: 40px;
 }
@@ -50,7 +52,6 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  /* background-color: rgb(255, 192, 203, 50%); */
 }
 
 .lemonade-display {
@@ -71,17 +72,13 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
+  position: relative;
   padding: 30px 0px;
 }
 
 .main-middle-text {
-  height: 45%;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
+  width: 85%;
 }
 
 .lemonade-icon {
@@ -90,11 +87,62 @@ header {
   background: #EBEBEB;
   border-radius: 45%;
   margin-bottom: 30px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-top: -120px;
+  margin-left: -175px;
+}
+
+.more-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.county-pic-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .county-pics {
   /* height: 200px; */
-  width: 35%;
+  width: 33%;
+  margin: 10px 0px;
+}
+
+.more-info-rate-section {
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.info-section-blocks {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5px 0px 15px;
+}
+
+.info-blocks {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgb(255, 170, 190);
+  font-size: large;
+}
+
+#more-info-side-note {
+  width: 80%;
+}
+
+#more-info-side-note > ul {
+  text-align: left;
 }
 
 .bottom-body {
@@ -138,6 +186,7 @@ header {
 
 label {
   margin-right: 10px;
+  font-size: 14px;
 }
 
 #booked-dates-display {
@@ -298,8 +347,8 @@ footer {
   bottom: 0px; */
   width: 100vw;
   height: 10vh;
-  background-color: rgb(255, 170, 190);
-  /* color: white; */
+  background-color: rgb(255, 170, 190, 85%);
+  color: white;
   display: flex;
   align-items: center;
   padding: 0px 20px;
