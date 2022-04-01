@@ -137,13 +137,13 @@ label {
 .calendar-spacer {
   width: 14.2%;
   height: 75px;
-  margin: 2px;
+  /* margin: 2px; */
 }
 
 .days {
   width: 14.2%;
   height: 85px;
-  margin: 2px;
+  /* margin: 2px; */
   padding-bottom: 5px;
   border: 1px solid black;
   display: flex;
