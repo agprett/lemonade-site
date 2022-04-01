@@ -1,5 +1,18 @@
 body {
   background: linear-gradient(white, #148CFF);
+  color: #363E44;
+}
+
+button {
+  background-color: #148CFF;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  border-color: none;
+}
+
+input, textarea {
+  border-radius: 5px;
 }
 
 header {
