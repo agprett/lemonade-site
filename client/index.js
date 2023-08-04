@@ -137,7 +137,7 @@ const restructureDate = (date) => {
 
   let year = splitDate[0]
   let month = splitDate[1]
-  let day = splitDate[2]
+  let day = splitDate[2].replace('T06:00:00.000Z', "")
 
   return `${month}/${day}/${year}`
 }

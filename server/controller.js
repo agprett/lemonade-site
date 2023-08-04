@@ -120,5 +120,45 @@ module.exports = {
     } else {
       res.sendStatus(400)
     }
+  },
+
+  seed: (req, res) => {
+    sequelize.query(`
+      DROP TABLE IF EXISTS bookings;
+      DROP TABLE IF EXISTS reviews;
+
+      CREATE TABLE bookings (
+        booking_id SERIAL PRIMARY KEY,
+        name VARCHAR(30),
+        address VARCHAR(100),
+        times VARCHAR(50),
+        date DATE,
+        status VARCHAR(30)
+      );
+
+      CREATE TABLE reviews (
+        review_id SERIAL PRIMARY KEY,
+        name VARCHAR(50),
+        rating INTEGER,
+        date DATE,
+        note text
+      );
+
+      INSERT INTO bookings
+      (name, address, times, date, status)
+      VALUES ('Alec', '123 Lane', 'Morning', '2023-08-11', 'pending'), ('James', '123 Lane', 'Afternoon', '2023-08-14', 'pending'), ('Kyle', '127 Lane', 'Morning Night', '2023-08-11', 'pending');
+
+      INSERT INTO reviews
+      (name, rating, date, note)
+      VALUES ('Alec', 4, '2022-06-05', 'good'), ('Kyle', 5, '2022-06-05', 'Amazing lemonade and staff'), ('Sami', 5, '2022-06-05', 'Great place');
+    `)
+      .then(dbRes => {
+        console.log(dbRes[0])
+        res.status(200).send('DB seeded!')
+      })
+      .catch(err => {
+        console.log(err)
+        res.status(500).send(`Couldn't seed DB`)
+      })
   }
 }
