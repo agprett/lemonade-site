@@ -3,6 +3,10 @@ This site is a simple full stack application. I made this site as a fun little s
 
 It uses HTML, CSS, and Vanila JS on the front-end, with Express and PostgreSQL on the back-end. I didn't need to make it with many other packags or technologies because it was meant to be just a simple, fun side project. Both the site and the database are hosted on Heroku. I don't expect to do much more to this site other than keep it up and running!
 
+Hosted Site: https://lemonade-truck.herokuapp.com/
+
+Github Repo: https://github.com/agprett/lemonade-site
+
 ## Installation and Setup
 To run this project is pretty straight-forward
 1. Clone or download the code
